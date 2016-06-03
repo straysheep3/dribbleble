@@ -4,7 +4,15 @@
 %p= @post.link
 %p= @post.description
 %p= @post.user.name
+%p
+  = @post.get_upvotes.size
+  Likes
+%P
+  = @post.get_downvotes.size
+  Bads
 
+= link_to "like", like_post_path(@post), method: :get
+= link_to "bad", dislike_post_path(@post), method: :get
 #comment
   %h2.comment_count= pluralize(@post.comments.count, "Comment")
   - @comments.each do |comment|
