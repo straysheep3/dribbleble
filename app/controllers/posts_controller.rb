@@ -25,7 +25,6 @@ class PostsController < ApplicationController
   end
 
   def edit
-    #code
   end
 
   def update
